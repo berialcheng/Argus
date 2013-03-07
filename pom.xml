@@ -53,5 +53,6 @@
 	</dependencies>
 	<modules>
 		<module>version</module>
+		<module>diff</module>
 	</modules>
 </project>

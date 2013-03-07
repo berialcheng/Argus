@@ -121,9 +121,10 @@ public class VersionService implements IVersionService {
 	}
 
 	public void test() {
-		String path = "quality-one/server/src/main/java/com/hp/it/server/servlet/SonarViolationChangeReportServlet.java";
+		String path = "fm-shared-business/src/main/java/com/hp/fm/service/AddressService.java";
 		try {
-			Collection<SVNFileRevision> col = this.repository.getFileRevisions(path, null, 1, 63);
+			long version = this.repository.getLatestRevision();
+			Collection<SVNFileRevision> col = this.repository.getFileRevisions(path, null, 1, version);
 			for (SVNFileRevision revision : col) {
 				this.repository.getFile(path, revision.getRevision(), null, new FileOutputStream(new File(
 						"/tmp/version/" + "pom.xml" + "-v" + revision.getRevision())));
