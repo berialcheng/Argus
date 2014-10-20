@@ -1,6 +1,17 @@
-*.class
+#folder
+.settings
+target
 
-# Package Files #
-*.jar
-*.war
-*.ear
+#file
+.classpath
+.project
+.swp
+.pyc
+
+##Grails eclipse
+target-eclipse
+
+# IDEA artifacts 
+*.iml
+*.ipr
+*.iws
