@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="sniffer">
+<head>
+<title>Argus</title>
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/angular-resource.min.js"></script>
+<script src="scripts/angular-route.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/sniffer.js"></script>
+<script src="scripts/ng-table.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/ng-table.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<h2>Argus</h2>
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

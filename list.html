@@ -1,0 +1,40 @@
+<input type="search" ng-model="search" class="search-query input-lg" placeholder="Search">
+<table class="table table-hover" >
+  <thead>
+	  <tr>
+		<th>Application</th>
+		<th>Site</th>
+		<th>Status</th>
+		<th>Server</th>
+		<th>Lib</th>
+		<th>Latency</th>
+		<th><a href="#/new"><i class="glyphicon glyphicon-plus"></i></a></th>
+	  </tr>
+  </thead>
+  <tbody>
+	  <tr ng-repeat="application in applications | orderByPriority | filter:search | orderBy:'name'">
+		<td data-toggle="tooltip" data-placement="bottom" title="{{application.name}}">{{application.name}}</td>
+		<td><a href="{{application.site}}" target="_blank"><i class="glyphicon glyphicon-link"></i></a></td>
+		<td>
+			<div ng-switch on="application.status">
+			    <div ng-switch-when="success">
+			        <i class="glyphicon glyphicon-ok"></i>
+			    </div>
+			    <div ng-switch-when="error">
+			        <i class="glyphicon glyphicon-remove"></i>
+			    </div>
+			    <div ng-switch-default>
+			        <i class="glyphicon glyphicon-question-sign"></i>
+			    </div>
+			</div>
+		</td>
+		<td>{{application.server}}</td>
+		<td></td>
+		<td>{{application.latency}} ms</td>
+		<td>
+		  <a href="#/view/{{application.$id}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+		  <a href="#/edit/{{application.$id}}"><i class="glyphicon glyphicon-edit"></i></a>
+		</td>
+	  </tr>
+  </tbody>
+</table>
